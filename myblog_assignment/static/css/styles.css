@@ -1,0 +1,43 @@
+/* Style the heading */
+h2 {
+    color: #333; /* Change text color */
+    font-size: 24px; /* Change font size */
+    margin-bottom: 20px; /* Add space below */
+}
+
+/* Style the form */
+form {
+    max-width: 400px; /* Set maximum width */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px; /* Add padding */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 5px; /* Add border radius */
+    background-color: #f9f9f9; /* Set background color */
+}
+
+/* Style form inputs */
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Set width to 100% */
+    padding: 10px; /* Add padding */
+    margin-bottom: 15px; /* Add space below */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 3px; /* Add border radius */
+}
+
+/* Style the submit button */
+button[type="submit"] {
+    width: 100%; /* Set width to 100% */
+    padding: 10px; /* Add padding */
+    background-color: #007bff; /* Set background color */
+    color: #fff; /* Set text color */
+    border: none; /* Remove border */
+    border-radius: 3px; /* Add border radius */
+    cursor: pointer; /* Add cursor pointer */
+    transition: background-color 0.3s; /* Add transition effect */
+}
+
+/* Hover effect for the submit button */
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Change background color on hover */
+}
