@@ -6,12 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/oldstyles.css' %}">
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">Django Assignment</div>
-        <ul class="nav-links">
+        <div class="logo" style="font-size: 2rem;">Restaurant Admin Panel</div>
+        <ul class="nav-links" style="font-size: 1.5rem;">
             <li><a href="{% url 'login' %}">Login</a></li>
             <li><a href="{% url 'signup' %}">Signup</a></li>
         </ul>

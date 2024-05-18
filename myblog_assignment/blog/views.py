@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from .models import Blog
-from .forms import BlogForm
+from .forms import BlogForm, BookingForm
 
 def main_page(request):
     return render(request, 'main.html')
@@ -11,6 +11,29 @@ def main_page(request):
 def index(request):
     return render(request, 'index.html')
     
+def home(request):
+    return render(request, 'home.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+def service(request):
+    return render(request, 'service.html')
+
+def menu(request):
+    return render(request, 'menu.html')
+
+def booking(request):
+    return render(request, 'booking.html')
+
+def team(request):
+    return render(request, 'team.html')
+
+def testimonial(request):
+    return render(request, 'testimonial.html')
+
+def contact(request):
+    return render(request, 'contact.html')
 
 def login_view(request):
     if request.method == 'POST':
@@ -40,19 +63,16 @@ def signup_view(request):
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
 
-def blog_list(request):
-    blogs = Blog.objects.all()
-    return render(request, 'blog_list.html', {'blogs': blogs})
 
-
-def create_blog(request):
+def book_table(request):
     if request.method == 'POST':
-        form = BlogForm(request.POST)
+        form = BookingForm(request.POST)
         if form.is_valid():
-            blog = form.save(commit=False)
-            blog.author = request.user  # Populate the author field with the current user
-            blog.save()
-            return redirect('blog_list')
+            booking_data = form.cleaned_data
+            return render(request, 'booking_data.html', {'booking_data': booking_data})
     else:
-        form = BlogForm()
-    return render(request, 'create_blog.html', {'form': form})
+        form = BookingForm()
+    return render(request, 'book_table.html', {'form': form})
+
+def booking_data(request):
+    return render(request, 'booking_data.html')
